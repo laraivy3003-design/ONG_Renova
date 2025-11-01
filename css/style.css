@@ -1,165 +1,103 @@
-/* ---------------------------
-   Variáveis do Design System
-----------------------------*/
-:root {
-  /* cores */
-  --primaria: #4CAF50;
-  --secundaria: #FFC107;
-  --acento: #FF5722;
-  --fundo: #f5f5f5;
-  --texto: #333333;
-  --texto-claro: #ffffff;
-  --borda: #dddddd;
-  --alerta: #f44336;
-
-  /* fontes e tamanhos */
-  --font-titulo: 'Arial', sans-serif;
-  --font-corpo: 'Verdana', sans-serif;
-  --h1-size: 32px;
-  --h2-size: 28px;
-  --h3-size: 24px;
-  --p-size: 16px;
-  --small-size: 14px;
-
-  /* espaçamentos (sistema modular) */
-  --s-8: 8px;
-  --s-16: 16px;
-  --s-24: 24px;
-  --s-32: 32px;
-  --s-48: 48px;
-  --s-64: 64px;
+/* ====== CONFIGURAÇÃO GERAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* ---------------------------
-   Reset e estilos base
-----------------------------*/
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: var(--font-corpo);
-  background: var(--fundo);
-  color: var(--texto);
-  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
 }
 
-h1 { font-size: var(--h1-size); font-family: var(--font-titulo); margin-bottom: var(--s-16); }
-h2 { font-size: var(--h2-size); font-family: var(--font-titulo); margin-bottom: var(--s-12); }
-h3 { font-size: var(--h3-size); font-family: var(--font-titulo); margin-bottom: var(--s-12); }
-p  { font-size: var(--p-size); margin-bottom: var(--s-16); }
-
-/* ---------------------------
-   Grid principal e utilitários
-----------------------------*/
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--s-16);
-  padding: var(--s-16);
+/* ====== CABEÇALHO ====== */
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
-.row-flex {
-  display: flex;
-  gap: var(--s-16);
-  align-items: center;
-  justify-content: flex-start;
+header h1 {
+  font-size: 2em;
 }
 
-/* ---------------------------
-   Navegação
-----------------------------*/
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: var(--s-16);
+/* ====== NAVEGAÇÃO ====== */
+nav {
+  background-color: #0056b3;
+  text-align: center;
+  padding: 10px;
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: var(--texto);
-  padding: var(--s-8);
-  transition: color .3s;
+  margin: 0 15px;
+  font-weight: bold;
 }
 
-nav a:hover { color: var(--primaria); }
-
-/* menu hamburguer (aparece no mobile) */
-.menu-hamburguer { display: none; flex-direction: column; cursor: pointer; }
-.menu-hamburguer span {
-  background: var(--texto);
-  height: 3px;
-  margin: 4px 0;
-  width: 25px;
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* ---------------------------
-   Cards
-----------------------------*/
-.card {
-  background: var(--texto-claro);
-  border: 1px solid var(--borda);
-  border-radius: 8px;
-  padding: var(--s-16);
-  transition: transform .2s, box-shadow .2s;
+/* ====== CONTEÚDO PRINCIPAL ====== */
+main {
+  padding: 20px;
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+section {
+  margin-bottom: 30px;
 }
 
-/* ---------------------------
-   Botões
-----------------------------*/
-button {
-  background: var(--primaria);
-  color: var(--texto-claro);
-  border: none;
-  padding: var(--s-8) var(--s-16);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background .2s;
+/* ====== PROJETOS ====== */
+.projeto-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
-button:hover { background: var(--secundaria); }
-button:active { background: var(--acento); }
-button:disabled { background: var(--borda); cursor: not-allowed; }
-
-/* ---------------------------
-   Formulários
-----------------------------*/
+/* ====== FORMULÁRIO ====== */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-16);
-  background: var(--texto-claro);
-  padding: var(--s-16);
-  border-radius: 8px;
-  border: 1px solid var(--borda);
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, select, textarea {
-  padding: var(--s-8);
-  border: 1px solid var(--borda);
-  border-radius: 4px;
-  font-size: var(--p-size);
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: var(--primaria);
-  outline: none;
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* ---------------------------
-   Responsividade (breakpoints)
-----------------------------*/
-@media (max-width: 1200px) { .container { grid-template-columns: repeat(8, 1fr); } }
-@media (max-width: 992px)  { .container { grid-template-columns: repeat(6, 1fr); } }
-@media (max-width: 768px)  { .container { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 576px)  {
-  .container { grid-template-columns: repeat(2, 1fr); }
-  nav ul { flex-direction: column; }
+button:hover {
+  background-color: #0056b3;
 }
-@media (max-width: 400px)  {
-  .container { grid-template-columns: 1fr; }
-  .menu-hamburguer { display: flex; }
+
+/* ====== RODAPÉ ====== */
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
