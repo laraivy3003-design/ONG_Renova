@@ -8,28 +8,58 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
+    <div class="container header-top">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <h1>Cadastro de Voluntário</h1>
-    <form>
-      <label>Nome Completo:<input type="text" name="nome" required></label><br>
-      <label>Email:<input type="email" name="email" required></label><br>
-      <label>CPF:<input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required></label><br>
-      <label>Telefone:<input type="tel" name="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(00) 00000-0000" required></label><br>
-      <label>Data de Nascimento:<input type="date" name="nascimento" required></label><br>
-      <label>Endereço:<input type="text" name="endereco" required></label><br>
-      <label>CEP:<input type="text" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required></label><br>
-      <label>Cidade:<input type="text" name="cidade" required></label><br>
-      <label>Estado:<input type="text" name="estado" required></label><br>
-      <button type="submit">Cadastrar</button>
+
+    <form id="form-cadastro" novalidate>
+      <label>Nome Completo
+        <input type="text" name="nome" required>
+      </label>
+
+      <label>E-mail
+        <input type="email" name="email" required>
+      </label>
+
+      <label>CPF
+        <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required>
+      </label>
+
+      <label>Telefone
+        <input type="tel" name="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(00) 00000-0000" required>
+      </label>
+
+      <label>Data de Nascimento
+        <input type="date" name="nascimento" required>
+      </label>
+
+      <label>Endereço
+        <input type="text" name="endereco" required>
+      </label>
+
+      <label>CEP
+        <input type="text" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required>
+      </label>
+
+      <label>Cidade
+        <input type="text" name="cidade" required>
+      </label>
+
+      <label>Estado
+        <input type="text" name="estado" required>
+      </label>
+
+      <button type="submit" class="btn-primary">Cadastrar</button>
     </form>
   </main>
 
