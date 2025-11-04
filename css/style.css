@@ -1,5 +1,11 @@
-/* ======= DESIGN SYSTEM - VARIÁVEIS ======= */
-:root {
+/* ======= STYLE.CSS - Entrega II (pronto para colar) ======= */
+
+/* =========================
+   DESIGN SYSTEM - VARIÁVEIS
+   (mantém suas cores/visual)
+   ========================= */
+:root{
+  /* cores (mantidas) */
   --cor-primaria: #1E7D57;
   --cor-secundaria: #0A84FF;
   --cor-acento: #F59E0B;
@@ -10,9 +16,15 @@
   --cor-clara: #F7F7F8;
   --cor-muted: #6B7280;
 
+  /* adicionais neutras para completar 8 cores */
+  --cor-neutra-1: #ffffff;
+  --cor-neutra-2: #f1f5f9;
+
+  /* tipografia */
   --font-titulo: "Poppins", "Arial", sans-serif;
   --font-corpo: "Inter", "Verdana", sans-serif;
 
+  /* escala tipográfica (mínimo 5) */
   --fs-xxl: 40px;
   --fs-xl: 32px;
   --fs-lg: 24px;
@@ -20,44 +32,69 @@
   --fs-sm: 14px;
   --fs-xs: 12px;
 
+  /* espaçamentos (modular) */
   --sp-8: 8px;
+  --sp-12: 12px;
   --sp-16: 16px;
   --sp-24: 24px;
   --sp-32: 32px;
   --sp-48: 48px;
   --sp-64: 64px;
 
+  /* layout */
   --container-max: 1200px;
   --gutter: var(--sp-16);
+
+  --transition-fast: 0.12s;
 }
 
-/* ====== RESET BÁSICO ====== */
+/* =========================
+   RESET & BASE
+   ========================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
-
-/* ====== BASE ====== */
 body {
   font-family: var(--font-corpo);
-  background-color: var(--cor-clara);
+  background: var(--cor-clara);
   color: var(--cor-escura);
-  line-height: 1.6;
   font-size: var(--fs-sm);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ====== CONTAINER ====== */
+/* =========================
+   CONTAINER
+   ========================= */
 .container {
   width: 100%;
   max-width: var(--container-max);
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
 
-/* ====== HEADER / NAV ====== */
-.header-top { display:flex; align-items:center; justify-content:space-between; gap:var(--sp-16); padding: var(--sp-8) 0; }
-.logo { max-width: 140px; height: auto; display:block; object-fit:contain; }
+/* =========================
+   HEADER / NAV (visual mantido)
+   ========================= */
+header { background: var(--cor-primaria); }
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-16);
+  padding: var(--sp-12) 0;
+}
 
+/* logo: mantido porém controlado */
+.logo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
+/* NAV (botões azuis como já tinha) */
 .nav-list {
   list-style: none;
   display: flex;
@@ -66,72 +103,95 @@ body {
   padding: 0;
   margin: 0;
 }
-.nav-list li { list-style: none; }
+.nav-list li { position: relative; }
 .nav-list a {
-  color: white;
+  display: inline-block;
   text-decoration: none;
+  color: #fff;
   background: var(--cor-secundaria);
   padding: 8px 12px;
   border-radius: 6px;
-  display:inline-block;
-  font-weight:600;
+  font-weight: 600;
+  transition: filter var(--transition-fast), transform .08s;
 }
-.nav-list a:hover { filter: brightness(.95); }
+.nav-list a:hover { filter: brightness(.95); transform: translateY(-1px); }
 
-/* header background */
-header { background: var(--cor-primaria); }
+/* submenu (desktop) */
+.sub-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 180px;
+  background: var(--cor-neutra-1);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  z-index: 60;
+}
+.sub-menu li a {
+  display: block;
+  color: var(--cor-escura);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.sub-menu li a:hover { background: rgba(10,132,255,0.06); }
+.nav-list li.has-sub:hover > .sub-menu { display: block; }
 
-/* ====== HERO / MAIN ====== */
+/* =========================
+   HERO / MAIN
+   ========================= */
 .hero { padding: var(--sp-24) 0; text-align: center; }
 main { padding: var(--sp-24) 0; }
 
-/* ====== LISTAS (Nossos Serviços) ====== */
-/* deixa as bolinhas (discs) organizadas e com recuo correto */
+/* =========================
+   LISTS - corrige bolinhas e recuos
+   ========================= */
 .services-list {
   list-style-type: disc;
-  padding-left: 1.5rem; /* recuo visível */
+  padding-left: 1.6rem;
   margin-top: var(--sp-16);
   text-align: left;
-  display: inline-block; /* mantém conteúdo centralizado mas lista alinhada à esquerda */
+  display: inline-block; /* mantém layout centrado visual que você tem */
 }
 
-/* ====== CARDS E SEÇÕES ====== */
+/* =========================
+   CARDS / PROJETOS
+   ========================= */
 .card {
-  background: #fff;
-  border-radius: 10px;
+  background: var(--cor-neutra-1);
+  border-radius: 8px;
   padding: var(--sp-16);
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   margin-bottom: var(--sp-16);
 }
 
-/* ====== PROJETOS - imagens menores e centradas ====== */
+/* imagens dos projetos: controladas para não ficarem grandes */
 .projeto-img {
   display: block;
   width: 100%;
-  max-width: 320px; /* reduzido para ficar delicado */
+  max-width: 320px;
   height: auto;
   margin: var(--sp-12) auto 0;
-  border-radius: 8px;
+  border-radius: 6px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ====== FORMULÁRIO - labels em bloco e estilo limpo ====== */
+/* =========================
+   FORMULÁRIO
+   ========================= */
 form {
   max-width: 520px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--cor-neutra-1);
   padding: var(--sp-16);
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.04);
 }
-
 form label { display:block; margin-bottom: 10px; font-size: var(--fs-sm); color: var(--cor-escura); }
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-textarea {
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -140,19 +200,60 @@ textarea {
   font-size: var(--fs-sm);
 }
 
-/* botão primary */
-.btn-primary {
-  background: var(--cor-primaria);
-  color: #fff;
+/* classes visuais para validação (JS pode aplicar) */
+.input-error { border-color: var(--cor-alerta) !important; box-shadow: 0 0 0 4px rgba(239,68,68,0.06); }
+.input-success { border-color: var(--cor-sucesso) !important; box-shadow: 0 0 0 4px rgba(22,163,74,0.06); }
+
+/* =========================
+   BOTÕES (estados completos)
+   ========================= */
+button, .btn-primary {
+  background: var(--cor-secundaria);
+  color: var(--cor-neutra-1);
+  border: none;
   padding: 10px 18px;
   border-radius: 8px;
-  border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  transition: transform .08s, filter var(--transition-fast);
 }
-.btn-primary:hover { filter: brightness(.95); }
+button:hover, .btn-primary:hover { filter: brightness(.92); transform: translateY(-1px); }
+button:active, .btn-primary:active { transform: translateY(0); }
+button:focus, .btn-primary:focus { outline: 3px solid rgba(10,132,255,0.12); outline-offset: 2px; }
+button[disabled], .btn-primary[disabled] { opacity: .6; cursor: not-allowed; }
 
-/* ====== FOOTER ====== */
+/* =========================
+   BADGES & TOAST
+   ========================= */
+.badge {
+  display:inline-block;
+  font-size: .85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--cor-secundaria);
+  color: #fff;
+  font-weight:600;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform .25s ease, opacity .25s ease;
+  z-index: 9999;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   background: var(--cor-primaria);
   color: #fff;
@@ -161,14 +262,56 @@ footer {
   margin-top: var(--sp-24);
 }
 
-/* ====== RESPONSIVIDADE ====== */
-@media (max-width: 900px) {
+/* =========================
+   HAMBURGUER (mobile)
+   ========================= */
+.hamburguer {
+  display: none; /* shown in mobile queries */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding: 6px;
+}
+.hamburguer span { display:block; width:22px; height:3px; background: #fff; margin:4px 0; border-radius:2px; }
+
+/* =========================
+   GRID 12-COL (utilitários simples)
+   ========================= */
+.site-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); }
+.col-1 { grid-column: span 1; } .col-2 { grid-column: span 2; } .col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; } .col-6 { grid-column: span 6; } .col-12 { grid-column: span 12; }
+
+/* =========================
+   RESPONSIVIDADE - 5 breakpoints
+   xl (<=1200) | lg (<=992) | md (<=768) | sm (<=576) | xs (<=480)
+   ========================= */
+@media (max-width: 1200px) { :root { --container-max: 1000px; } }
+@media (max-width: 992px)  { :root { --container-max: 820px; } }
+@media (max-width: 768px)  {
+  :root { --container-max: 680px; }
   .header-top { flex-direction: column; gap: var(--sp-8); text-align:center; }
   .nav-list { flex-wrap: wrap; justify-content:center; }
   .logo { max-width: 120px; }
 }
-
-@media (max-width: 576px) {
+@media (max-width: 576px)  {
+  :root { --container-max: 520px; }
   .container { padding-left: var(--sp-8); padding-right: var(--sp-8); }
   .projeto-img { max-width: 260px; }
+  .nav { display: none; }             /* hide desktop nav on mobile */
+  .hamburguer { display: block; }    /* show hamburguer */
+  .nav-list { flex-direction: column; gap: var(--sp-8); align-items: stretch; }
+  .sub-menu { position: static; box-shadow: none; background: transparent; padding: 0; }
 }
+@media (max-width: 480px) {
+  :root { --container-max: 360px; }
+  .projeto-img { max-width: 220px; }
+  .logo { max-width: 100px; }
+}
+
+/* =========================
+   ACESSIBILIDADE E UTILS
+   ========================= */
+a { color: inherit; }
+a:focus { outline: 3px solid rgba(10,132,255,0.12); outline-offset: 2px; }
+.hidden { display: none !important; }

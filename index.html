@@ -10,7 +10,10 @@
   <header>
     <div class="container header-top">
       <img src="imagens/logo.jpg" alt="Logo ONG Renova" class="logo">
-      <nav>
+      <button id="btn-hamburguer" class="hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
@@ -46,5 +49,52 @@
   <footer>
     <p>© 2025 ONG Renova. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- SCRIPT: hamburger toggle, toast and form handling -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btnMain = document.getElementById('btn-hamburguer') || document.getElementById('btn-hamburguer-proj') || document.getElementById('btn-hamburguer-cad');
+    const navMain = document.getElementById('main-nav') || document.getElementById('main-nav-proj') || document.getElementById('main-nav-cad');
+
+    if (btnMain && navMain) {
+      btnMain.addEventListener('click', () => {
+        const isVisible = navMain.style.display === 'block';
+        navMain.style.display = isVisible ? 'none' : 'block';
+        btnMain.setAttribute('aria-expanded', String(!isVisible));
+      });
+    }
+
+    window.showToast = function(msg = '', duration = 3000) {
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      requestAnimationFrame(()=> t.classList.add('show'));
+      setTimeout(()=> {
+        t.classList.remove('show');
+        setTimeout(()=> t.remove(), 300);
+      }, duration);
+    };
+
+    const form = document.getElementById('form-cadastro');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (form.checkValidity()) {
+          showToast('Cadastro simulado enviado!');
+          form.reset();
+        } else {
+          Array.from(form.elements).forEach(el => {
+            if (el.checkValidity && !el.checkValidity()) {
+              el.classList.add('input-error');
+              setTimeout(()=> el.classList.remove('input-error'), 2500);
+            }
+          });
+          showToast('Por favor, preencha os campos corretamente', 3000);
+        }
+      });
+    }
+  });
+  </script>
 </body>
 </html>
