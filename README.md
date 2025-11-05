@@ -53,12 +53,6 @@ Este projeto foi desenvolvido como parte da **Atividade Prática de Front-End �
 ✅ Design simples, porém funcional  
 
 ---
-
-## 🚀 Como Executar
-
-1. Baixe o repositório ou clone com:
-   ```bash
-   git clone https://github.com/seu-usuario/ong-renova.git
    
 👩‍💻 Autoria
 
