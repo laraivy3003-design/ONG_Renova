@@ -315,3 +315,55 @@ footer {
 a { color: inherit; }
 a:focus { outline: 3px solid rgba(10,132,255,0.12); outline-offset: 2px; }
 .hidden { display: none !important; }
+/* ======= MELHORIAS VISUAIS (opcional) ======= */
+
+/* Animações suaves nas transições do SPA */
+#content {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Botões mais elegantes */
+button,
+input[type="submit"] {
+  background-color: #3a7bd5;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #2b5fa0;
+}
+
+/* Campos de formulário mais bonitos */
+input, textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3a7bd5;
+  outline: none;
+}
+
+/* Mensagens de erro */
+.error-mess
