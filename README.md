@@ -12,29 +12,7 @@ Este projeto foi desenvolvido como parte da **Atividade Prática de Front-End �
 - Implementar um **sistema de templates em JavaScript**.
 - Adicionar **validação de formulários** com mensagens de erro para campos incorretos.
 - Organizar a estrutura de arquivos e pastas de forma profissional.
-
----
-
-## 🧩 Estrutura de Pastas
-
-/ong-renova
-│
-├── index.html
-├── projetos.html
-├── cadastro.html
-│
-├── /css
-│ └── style.css
-│
-├── /js
-│ ├── app.js
-│ ├── template.js
-│ └── formValidation.js
-│
-└── /imagens
-└── (todas as imagens utilizadas no projeto)
-
----
+-----
 
 ## 🖥️ Tecnologias Utilizadas
 
