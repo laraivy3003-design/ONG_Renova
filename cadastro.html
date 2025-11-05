@@ -1,0 +1,25 @@
+<section class="cadastro">
+  <h1>Cadastro de Voluntários</h1>
+  <p>Preencha o formulário abaixo para se cadastrar como voluntário na ONG Renova:</p>
+
+  <form id="form-cadastro">
+    <label for="nome">Nome completo:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+
+    <label for="area">Área de interesse:</label>
+    <select id="area" name="area" required>
+      <option value="">Selecione...</option>
+      <option value="educacao">Educação</option>
+      <option value="assistencia">Assistência Social</option>
+      <option value="comunicacao">Comunicação</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
