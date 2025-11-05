@@ -1,7 +1,7 @@
 
 # 🌿 ONG Renova
 
-Este projeto foi desenvolvido como parte da **Atividade Prática de Front-End – Parte 3**, com o objetivo de transformar uma interface estática em uma aplicação **dinâmica e interativa** utilizando **JavaScript avançado**.
+Este projeto foi desenvolvido como parte da **Atividade Prática de Front-End , com o objetivo de transformar uma interface estática em uma aplicação **dinâmica e interativa** utilizando **JavaScript avançado**.
 
 ---
 
