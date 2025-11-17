@@ -73,6 +73,17 @@ if (btnHamburguer && navMain) {
   });
 }
 
+// Fecha menu hamburguer ao pressionar ESC
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (btnHamburguer.getAttribute('aria-expanded') === 'true') {
+      navMain.style.display = 'none';
+      btnHamburguer.setAttribute('aria-expanded', 'false');
+      btnHamburguer.focus();
+    }
+  }
+});
+
 // inicial: carrega a home
 window.addEventListener('DOMContentLoaded', () => {
   loadPage('home');
