@@ -1,42 +1,33 @@
-# ONG Renova
+# 🏢 ONG Renova
 
-Este projeto foi desenvolvido como parte da **Atividade Prática de Front-End**, com o objetivo de transformar uma interface estática em uma aplicação dinâmica e interativa utilizando JavaScript avançado.
+## 1. 📋 Descrição do Projeto  
+A **ONG Renova** é uma iniciativa social com a missão de promover a transformação social por meio do fortalecimento de comunidades vulneráveis, oferecendo suporte a projetos que incentivem a educação, a inclusão e o desenvolvimento sustentável. Nosso foco é criar oportunidades para que indivíduos possam renovar suas vidas e construir um futuro melhor, por meio de ações colaborativas, voluntariado e parcerias com a sociedade civil.
 
-## 🎯 Objetivos do Projeto
+O site é uma aplicação web de página única (SPA) que apresenta informações sobre os projetos da ONG e permite o cadastro de pessoas interessadas em se envolver.
 
-- Implementar manipulação do DOM.  
-- Criar um sistema básico de Single Page Application (SPA).  
-- Implementar um sistema de templates em JavaScript.  
-- Adicionar validação de formulários com mensagens de erro para campos incorretos.  
-- Organizar a estrutura de arquivos e pastas de forma profissional.  
-- Garantir acessibilidade conforme as diretrizes WCAG 2.1 nível AA.  
-- Utilizar versionamento semântico e GitFlow para controle do código.  
-- Preparar o projeto para deploy em ambiente de produção.
+## 2. 💻 Tecnologias Utilizadas  
+- HTML5  
+- CSS3  
+- JavaScript  
+- Hospedagem: GitHub Pages  
 
-## 🖥️ Tecnologias Utilizadas
+## 3. 🔄 Controle de Versão (Versionamento)  
+- Estratégia de branching: **GitFlow** (`main`, `develop`, `feature/...`, `release/...`, `hotfix/...`)  
+- Commits semânticos: exemplos como `feat:`, `fix:`, `docs:`  
+- Versionamento semântico para releases (ex: `v1.0.0`)
 
-- HTML5 → Estrutura e conteúdo da página.  
-- CSS3 → Estilização e layout.  
-- JavaScript (modular) → Interatividade, SPA e validação de formulários.  
-- Git/GitHub → Controle de versão, colaboração e versionamento semântico.
+## 4. ♿ Acessibilidade (WCAG 2.1 Nível AA)  
+- Navegação por teclado em todos os componentes  
+- Estrutura semântica com tags HTML apropriadas (`<header>`, `<nav>`, `<main>`, `<footer>`)  
+- Contraste mínimo de 4.5:1 para textos  
+- Suporte a leitores de tela (uso de ARIA e descrições)  
+- Versão de alto contraste e modo escuro acessível *(se implementado ou planejado)*
 
-## 🧠 Funcionalidades Implementadas
+## 5. ⚙️ Otimização para Produção  
+- Minificação de CSS, JavaScript e HTML _(ex: Terser, CSSNano)_  
+- Compressão de imagens para otimizar o carregamento
 
-- ✅ Navegação dinâmica entre seções sem recarregar a página (SPA).  
-- ✅ Sistema de templates com carregamento via JavaScript.  
-- ✅ Validação de formulários com mensagens de alerta.  
-- ✅ Estrutura modular e organizada do código.  
-- ✅ Design simples, porém funcional.  
-- ✅ Acessibilidade implementada: navegação por teclado, contraste adequado, suporte para leitores de tela e estrutura semântica correta.  
-- ✅ Versionamento semântico com commits organizados, branching GitFlow e Pull Requests documentados.  
-- ✅ Preparação para deploy com otimizações e documentação técnica.
-
-## 👩‍💻 Autoria
-
-Projeto desenvolvido por **Lara Moreira Alves**  
-Curso: Análise e Desenvolvimento de Sistemas – Cruzeiro do Sul  
-Atividade Prática de Front-End – Entrega IV
-
----
-
-
+## 6. 🚀 Como Executar o Projeto Localmente  
+1. Clone este repositório:  
+   ```bash
+   git clone https://github.com/laraivy3003-design/ONG_Renova.git
